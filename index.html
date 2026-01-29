@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoRide – Aura SX Taxi Service</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f4f4f4;color:#333}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#727db3,#ff8a50);
+  color:#fff;
+  text-align:center;
+  padding:40px 20px;
+}
+header h1{font-size:36px;animation:fade 1.5s forwards}
+header p{margin-top:10px;font-size:18px;animation:fade 2.5s forwards}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  margin:15px 10px;
+  padding:14px 26px;
+  background:#fff;
+  color:#ff5722;
+  font-weight:600;
+  border-radius:30px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.btn:hover{transform:scale(1.1);background:#222;color:#fff}
+
+/* SECTION */
+section{
+  padding:50px 20px;
+  background:#fff;
+  margin:20px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  animation:fadeUp 1.2s forwards;
+}
+section h2{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:28px;
+  color:#83609e;
+}
+
+/* MAIN IMAGE */
+.main-img{
+  width:100%;
+  max-width:520px;
+  display:block;
+  margin:0 auto;
+  border-radius:20px;
+  animation:float 3s infinite;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.gallery img{
+  width:100%;
+  border-radius:15px;
+  transition:0.3s;
+}
+.gallery img:hover{
+  transform:scale(1.08);
+  box-shadow:0 15px 25px rgba(0,0,0,0.3);
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.service{
+  background:#f9f9f9;
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  transition:0.3s;
+}
+.service:hover{
+  transform:translateY(-10px);
+  background:#ff5722;
+  color:#fff;
+}
+
+
+
+/* ===== SERVICES ===== */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.service{
+  background:#f9f9f9;
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.service:hover{
+  transform:translateY(-10px);
+  background:#ff5722;
+  color:#fff;
+}
+
+
+
+/* PRICE LIST */
+.pricing{
+    padding:40px;
+}
+.pricing h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+.price-box{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+.price-card{
+    background:#fff;
+    padding:25px;
+    width:250px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+.price-card:hover{
+    transform:translateY(-10px);
+}
+.price-card h3{
+    margin-bottom:10px;
+}
+.price-card span{
+    font-size:22px;
+    color:#2c5364;
+    font-weight:600;
+}
+
+/* CONTACT */
+.contact{text-align:center}
+.contact a{
+  display:inline-block;
+  margin:10px;
+  padding:15px 30px;
+  background:#ff5722;
+  color:#fff;
+  border-radius:30px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.contact a:hover{background:#000;transform:scale(1.1)}
+
+
+/* MAP */
+.map{
+    padding:40px;
+}
+.map iframe{
+    width:100%;
+    height:300px;
+    border-radius:15px;
+}
+
+
+/* FOOTER */
+footer{
+    background:#0f2027;
+    color:#fff;
+    padding:40px 20px;
+}
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+footer h3{
+    margin-bottom:10px;
+}
+footer a{
+    color:#fff;
+    text-decoration:none;
+}
+footer a:hover{
+    color:#00c6ff;
+}
+
+
+.social i{
+    font-size:22px;
+    margin-right:12px;
+    transition:0.3s;
+    color: #f2f4f7;
+}
+.social i:hover{
+    transform:scale(1.3);
+    color:#00c6ff;
+}
+.copy{
+    text-align:center;
+    margin-top:20px;
+    font-size:14px;
+}
+
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:#fff;
+    padding:15px;
+    border-radius:50%;
+    font-size:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    animation:pulse 2s infinite;
+}
+
+.whatsapp i{
+  font-size:28px;
+  line-height:1;
+}
+
+.whatsapp:hover{
+    transform:scale(1.3);
+    color:#05ee8d;
+}
+
+
+
+
+
+/* ANIMATIONS */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+  100%{transform:translateY(0)}
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+
+
+/* ANIMATIONS */
+/* @keyframes fadeIn{
+    from{opacity:0;transform:translateY(-20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
+    70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+} */
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>GoRide Taxi Service</h1>
+  <p> Airport • Outstation • Local</p>
+  <a href="tel:+911234567890" class="btn">📞 Call Now</a>
+  <a href="https://wa.me/911234567890" class="btn">💬 WhatsApp</a>
+</header>
+
+<section>
+  <h2>Our Premium Car</h2>
+  <img src="./aura.jpg.jpeg" class="main-img">
+</section>
+
+<section>
+  <h2>Car Gallery</h2>
+  <div class="gallery">
+    <img src="./aura.jpg.jpeg">
+    <img src="./aura2.jpg.jpeg">
+    <img src="./aura3.jpg.jpeg">
+    <img src="./aura4.jpg.jpeg">
+    <img src="./aura.jpg.jpeg">
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section>
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="service">✈ Airport Pickup & Drop</div>
+    <div class="service">🚕 Local City Ride</div>
+    <div class="service">🛣 Outstation Taxi</div>
+    <div class="service">💼 Corporate Travel</div>
+  </div>
+</section>
+
+<section>
+  <h2>About Our Services</h2>
+  <p style="max-width:800px;margin:auto;font-size:17px;line-height:1.8">
+    GoRide Taxi Service aapko safe, comfortable aur time-bound travel experience deta hai.
+    Hamari Aura SX commercial gaadi fully maintained, clean aur fuel-efficient hai.
+    Hum airport pickup & drop, local city travel, outstation rides aur corporate bookings
+    provide karte hain. Experienced driver, transparent pricing aur 24×7 customer support
+    ke saath hum aapki journey ko tension-free banate hain.
+  </p>
+</section>
+
+<section class="pricing">
+    <h2>Price List</h2>
+    <div class="price-box">
+        <div class="price-card">
+            <h3>Local Ride</h3>
+            <span>₹11 / km</span>
+        </div>
+        <div class="price-card">
+            <h3>Airport Pickup</h3>
+            <span>₹999</span>
+        </div>
+        <div class="price-card">
+            <h3>Outstation</h3>
+            <span>₹12 / km</span>
+        </div>
+        <div class="price-card">
+            <h3>Half Day</h3>
+            <span>₹2199 / 40 km(4 Hours) </span>
+        </div>
+        <div class="price-card">
+            <h3>Full Day</h3>
+            <span>₹3499 / 80km(8 Hours)</span>
+        </div>
+      </div>
+</section>
+
+<section class="contact">
+  <h2>Book Your Ride Now</h2>
+  <a href="tel:+919785030185">Call Now</a>
+  <a href="https://wa.me/919785030185">WhatsApp Booking</a>
+</section>
+
+
+<section class="map">
+    <iframe src="https://www.google.com/maps?q=Delhi&output=embed"></iframe>
+</section>
+
+
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>Contact</h3>
+            <p><i class="fa-solid fa-phone"></i> +91 9785030185</p>
+            <p><i class="fa-solid fa-location-dot"></i> Jaipur, India</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <p><a href="#">Home</a></p>
+            <p><a href="#">Services</a></p>
+            <p><a href="#">Pricing</a></p>
+        </div>
+
+        <div>
+            <h3>Follow Us</h3>
+            <div class="social">
+  <a href="https://instagram.com/yourpage" target="_blank">
+    <i class="fa fa-instagram"></i>
+  </a>
+  <a href="https://facebook.com/yourpage" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+</div>
+
+        </div>
+    </div>
+
+    <div class="copy">
+        © 2026 GoRide Taxi Service | All Rights Reserved
+    </div>
+</footer>
+
+<a href="https://wa.me/919785030185" class="whatsapp" target="_blank">
+  <i class="fa fa-whatsapp"></i>
+</a>
+
+
+</body>
+</html>
